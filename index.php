@@ -3,6 +3,7 @@
   include "db-popo.php";
   include "db-query.php";
   include "db-connection.php";
+  include "db.test.php";
 
   $res = $conn -> query($query_getAllDrinks);
 
@@ -37,6 +38,17 @@
   }
   echo "MIN: " . $min . "<br>"
         . "MAX: " . $max . "<br>"
-        . "SUM: " . $sum;
+        . "SUM: " . $sum . "<br><br>";
 
+
+        $rettangoli =[];
+
+        for ($i = 0; $i < 10; $i++){
+          $rettangolo = new Rettangolo(rand(1,10), rand(1,10));
+          $rettangoli[] = $rettangolo;
+
+          echo $rettangolo -> __toString() . "<br>";
+        }
+
+        // var_dump($rettangoli);
 ?>
